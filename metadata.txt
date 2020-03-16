@@ -1,0 +1,7 @@
+[general]
+name=Controle do Acervo
+email=eliton.filho@eb.mil.br
+author=1cgeo
+qgisMinimumVersion=3.0
+description=Conjunto de ferramentas usadas no Controle do Acervo do 1º CGEO.
+version=0.0.0
