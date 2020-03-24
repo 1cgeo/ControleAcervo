@@ -5,6 +5,9 @@ from PyQt5.QtCore import QObject
 from PyQt5.QtWidgets import QAction
 from PyQt5.QtGui import QIcon
 
+from ControleAcervo.app.appCtrl import AppCtrl
+from ControleAcervo.qgis.qgisCtrl import QgisCtrl
+
 class PluginControleAcervo(QObject):
 
     path_icon = Path(__file__).parent.resolve().joinpath('icon.jpg')
@@ -34,3 +37,5 @@ class PluginControleAcervo(QObject):
 
     def startPlugin(self):
         # Init controllers and show login dialog
+        self.qgisCtrl = QgisCtrl()
+        self.appCtrl = AppCtrl(gisPlatform=self.qgisCtrl)

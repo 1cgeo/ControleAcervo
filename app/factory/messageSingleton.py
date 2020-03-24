@@ -1,4 +1,4 @@
-from ControleAcervo.ctrl.dialogs.messageAlert  import Message
+from ControleAcervo.app.dialogs.messageAlert  import Message
 
 class MessageSingleton:
 

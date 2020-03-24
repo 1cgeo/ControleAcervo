@@ -3,7 +3,7 @@ from pathlib import Path
 from PyQt5 import QtCore, uic, QtWidgets
 from ControleAcervo.config import Config
 # Import interface, if necessary
-from ControleAcervo.ctrl.factory.messageSingleton  import MessageSingleton
+from ControleAcervo.app.factory.messageSingleton  import MessageSingleton
 
 class Login(QtWidgets.QDialog):
 
