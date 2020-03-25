@@ -3,7 +3,7 @@ from ControleAcervo.app.factory.messageSingleton  import MessageSingleton
 from pathlib import Path
 from PyQt5 import QtCore, uic, QtWidgets, QtGui
 
-class ManagementDock(QtWidgets.QDockWidget, IManagementDock):
+class ManagementDock(QtWidgets.QDockWidget):
 
     dialog_path = Path(__file__).parent.resolve().joinpath(
         'uis', 'managementDock.ui')
