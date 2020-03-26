@@ -7,7 +7,7 @@ from ControleAcervo.app.factory.messageSingleton  import MessageSingleton
 
 class Login(QtWidgets.QDialog):
 
-    uiPath = Path(__file__).joinpath('../uis/login.ui').resolve()
+    uiPath = Path(__file__).resolve().joinpath('../uis/login.ui')
 
     def __init__(self):
         super(Login, self).__init__()

@@ -1,29 +1,10 @@
-<<<<<<< Updated upstream
-# Import dockwidgets .py definitions here
-=======
 #insert dockwidgets here!
 from ControleAcervo.app.dockWidgets.loadLayers  import LoadLayers
 from ControleAcervo.app.dockWidgets.downloadLayers  import DownloadLayers
->>>>>>> Stashed changes
 
 class DockDirector:
 
     #interface
-<<<<<<< Updated upstream
-    def constructManagementDock(self, dockBuilder, sapCtrl):
-        # For each widget on addLoadLayers
-        for functionWidget in [
-                # {
-                #     "name" : 'Avançar atividades para próxima etapa',
-                #     "widget" : AdvanceActivityToNextStep(sapCtrl)
-                # }
-            ]:
-            dockBuilder.addLoadLayersWidget(functionWidget['name'], functionWidget['widget'])
-        # repeat for other tabs
-        # Update managementDockBuilder.py
-            
-            
-=======
     def constructAppManagementDock(self, dockBuilder, appCtrl):
         #User tab
         for functionWidget in [
@@ -45,4 +26,3 @@ class DockDirector:
         #         }
         #     ]:
         #     dockBuilder.addAdminWidget(functionWidget['name'], functionWidget['widget'])
->>>>>>> Stashed changes

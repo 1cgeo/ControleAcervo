@@ -3,19 +3,15 @@ from ControleAcervo.app.factory.messageSingleton  import MessageSingleton
 from pathlib import Path
 from PyQt5 import QtCore, uic, QtWidgets, QtGui
 
-<<<<<<< Updated upstream
-class ManagementDock(QtWidgets.QDockWidget):
-=======
 class DockManagement(QtWidgets.QDockWidget):
->>>>>>> Stashed changes
 
-    dialog_path = Path(__file__).parent.resolve().joinpath(
+    dialog_path = Path(__file__).resolve().parent.joinpath(
         'uis', 'managementDock.ui')
 
-    tab_icon_path = Path(__file__).parent.resolve().joinpath(
+    tab_icon_path = Path(__file__).resolve().parent.joinpath(
         'icons', 'DSG.svg')
 
-    item_icon_path = Path(__file__).parent.resolve().joinpath(
+    item_icon_path = Path(__file__).resolve().parent.joinpath(
         'icons', 'config.png')
 
     def __init__(self):

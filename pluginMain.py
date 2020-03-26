@@ -10,11 +10,11 @@ from ControleAcervo.qgis.qgisCtrl import QgisCtrl
 
 class PluginControleAcervo(QObject):
 
-    path_icon = Path(__file__).parent.resolve().joinpath('icon.jpg')
+    path_icon = Path(__file__).resolve().parent.joinpath('icon.jpg')
 
     def __init__(self, iface):
         super(PluginControleAcervo, self).__init__()
-        self.plugin_dir = Path.parent(__file__)
+        self.plugin_dir = Path(__file__).parent
         self.iface = iface
         self.action = QAction(
             QIcon(self.path_icon),
