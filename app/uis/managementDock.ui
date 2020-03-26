@@ -27,7 +27,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -38,23 +38,17 @@
       <property name="tabsClosable">
        <bool>false</bool>
       </property>
-      <widget class="QWidget" name="loadLayers">
+      <widget class="QWidget" name="userTab">
        <attribute name="title">
-        <string>Carregar camadas</string>
+        <string>Acesso ao acervo</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout"/>
       </widget>
-      <widget class="QWidget" name="downloadLayers">
+      <widget class="QWidget" name="adminTab">
        <attribute name="title">
-        <string>Baixar camadas</string>
+        <string>Gerência do acervo</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2"/>
-      </widget>
-      <widget class="QWidget" name="managementArea">
-       <attribute name="title">
-        <string>Gerência de dados</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3"/>
       </widget>
      </widget>
     </item>

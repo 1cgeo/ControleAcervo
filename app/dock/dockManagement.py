@@ -3,7 +3,11 @@ from ControleAcervo.app.factory.messageSingleton  import MessageSingleton
 from pathlib import Path
 from PyQt5 import QtCore, uic, QtWidgets, QtGui
 
+<<<<<<< Updated upstream
 class ManagementDock(QtWidgets.QDockWidget):
+=======
+class DockManagement(QtWidgets.QDockWidget):
+>>>>>>> Stashed changes
 
     dialog_path = Path(__file__).parent.resolve().joinpath(
         'uis', 'managementDock.ui')
@@ -15,31 +19,24 @@ class ManagementDock(QtWidgets.QDockWidget):
         'icons', 'config.png')
 
     def __init__(self):
-        super(ManagementDock, self).__init__()
+        super().__init__()
         uic.loadUi(self.dialog_path, self)
         self.tabWidget.setTabIcon(0, QtGui.QIcon(self.tab_icon_path))
         self.tabWidget.setTabIcon(1, QtGui.QIcon(self.tab_icon_path))
-        self.tabWidget.setTabIcon(2, QtGui.QIcon(self.tab_icon_path))
-        
-        self.treeWidgetLoadLayers = QtWidgets.QTreeWidget()
-        self.treeWidgetLoadLayers.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
-        self.treeWidgetLoadLayers.setColumnCount(1)
-        self.treeWidgetLoadLayers.header().hide()
-        self.connectQtreeWidgetSignals(self.treeWidgetLoadLayers)
-        self.projectTab.layout().addWidget(self.treeWidgetLoadLayers)
 
-        self.treeWidgetDownloadlayers = QtWidgets.QTreeWidget()
-        self.treeWidgetDownloadlayers.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
-        self.treeWidgetDownloadlayers.setColumnCount(1)
-        self.treeWidgetDownloadlayers.header().hide()
-        self.connectQtreeWidgetSignals(self.treeWidgetDownloadlayers)
-        self.creationTab.layout().addWidget(self.treeWidgetDownloadlayers)
+        self.treeWidgetUserTab = QtWidgets.QTreeWidget()
+        self.treeWidgetUserTab.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
+        self.treeWidgetUserTab.setColumnCount(1)
+        self.treeWidgetUserTab.header().hide()
+        self.connectQtreeWidgetSignals(self.treeWidgetUserTab)
+        self.projectTab.layout().addWidget(self.treeWidgetUserTab)
 
-        self.treeWidgetManagementTools = QtWidgets.QTreeWidget()
-        self.treeWidgetManagementTools.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
-        self.treeWidgetManagementTools.setColumnCount(1)
-        self.treeWidgetManagementTools.header().hide()
-        self.connectQtreeWidgetSignals(self.treeWidgetManagementTools)
+        self.treeWidgetAdminTab = QtWidgets.QTreeWidget()
+        self.treeWidgetAdminTab.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
+        self.treeWidgetAdminTab.setColumnCount(1)
+        self.treeWidgetAdminTab.header().hide()
+        self.connectQtreeWidgetSignals(self.treeWidgetAdminTab)
+        self.creationTab.layout().addWidget(self.treeWidgetAdminTab)
 
     def connectQtreeWidgetSignals(self, treeWidget):
         treeWidget.itemExpanded.connect(
@@ -58,29 +55,21 @@ class ManagementDock(QtWidgets.QDockWidget):
         item.setExpanded(True)
         self.connectQtreeWidgetSignals(treeWidget)
 
-    def addLoadLayersWidget(self, name, widget):
+    def addUserWidget(self, name, widget):
         topLevelItem = QtWidgets.QTreeWidgetItem([name])
         topLevelItem.setIcon(0, QtGui.QIcon(self.item_icon_path))
         childItem = QtWidgets.QTreeWidgetItem()
         topLevelItem.addChild(childItem)
-        self.treeWidgetLoadLayers.addTopLevelItem(topLevelItem)
-        self.treeWidgetLoadLayers.setItemWidget(childItem, 0, widget)
+        self.treeWidgetUserTab.addTopLevelItem(topLevelItem)
+        self.treeWidgetUserTab.setItemWidget(childItem, 0, widget)
 
-    def addDownloadLayersWidget(self, name, widget):
+    def addAdminWidget(self, name, widget):
         topLevelItem = QtWidgets.QTreeWidgetItem([name])
         topLevelItem.setIcon(0, QtGui.QIcon(self.item_icon_path))
         childItem = QtWidgets.QTreeWidgetItem()
         topLevelItem.addChild(childItem)
-        self.treeWidgetDownloadlayers.addTopLevelItem(topLevelItem)
-        self.treeWidgetDownloadlayers.setItemWidget(childItem, 0, widget)
-
-    def addManagementToolsWidget(self, name, widget):
-        topLevelItem = QtWidgets.QTreeWidgetItem([name])
-        topLevelItem.setIcon(0, QtGui.QIcon(self.item_icon_path))
-        childItem = QtWidgets.QTreeWidgetItem()
-        topLevelItem.addChild(childItem)
-        self.treeWidgetManagementTools.addTopLevelItem(topLevelItem)
-        self.treeWidgetManagementTools.setItemWidget(childItem, 0, widget)
+        self.treeWidgetAdminTab.addTopLevelItem(topLevelItem)
+        self.treeWidgetAdminTab.setItemWidget(childItem, 0, widget)
 
     def showError(self, title, text):
         MessageSingleton.getInstance().showError(

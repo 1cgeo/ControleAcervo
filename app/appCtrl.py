@@ -15,7 +15,7 @@ class AppCtrl():
     def loadWidgetApp(self):
         dockDirector = DockDirector()
         managementDockBuilder = ManagementDockBuilder()
-        dockDirector.constructSapManagementDock(managementDockBuilder, sapCtrl=self)
+        dockDirector.constructAppManagementDock(managementDockBuilder, sapCtrl=self)
         self.dockApp = managementDockBuilder.getResult()
         self.gisPlatform.addDockWidget(self.dockApp)
 
